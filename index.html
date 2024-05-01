@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<main class="application">
+    <div class="bgImg">
+        <img src="image/bgimage.jpg" alt="">
+    </div>
+    <div class="section">
+        <div class="requirements">
+            <div class="application__title">Требования к заявке</div>
+            <div class="application-description">
+                <div class="application__text requirements-logo">
+                    <img src="image/Vector.png" alt="" class="requirements-logo__svg">
+                    <div>Сувенирная продукция</div>
+                </div>
+                <div class="application__text ">18+</div>
+                <div class="application__text ">Медицинская книжка</div>
+            </div>
+        </div>
+
+        <div class="possibility">
+            <div class="application__title">Возможность приобрести навыки</div>
+            <div class="application-description">
+                <div class="application__text">Английский язык</div>
+                <div class="application__text">При себе иметь водительское удостоверение</div>
+                <div class="application__text">Ведение переговоров</div>
+                <div class="application__text">Ивент- и тайм-менеджмент</div>
+                <div class="application__text">Принятие решений</div>
+                <div class="application__text">Стратегическое и творческое мышление</div>
+                <div class="application__text">Организаторские навыки</div>
+            </div>
+        </div>
+
+        <div class="volunteer">
+            <div class="application__title">Требования к волонтерам</div>
+            <div class="application-description">
+                <div class="application__text">Публичные выступления</div>
+            </div>
+        </div>
+
+        <div class="allowed">
+            <div class="allowed__item">Можно с детьми</div>
+            <div class="allowed__item">Для людей с инвалидностью</div>
+            <div class="allowed__item">Для людей с инвалидностью</div>
+            <div class="allowed__item">Можно с детьми</div>
+            <div class="allowed__item">Можно с детьми</div>
+            <div class="allowed__item">Можно с детьми</div>
+        </div>
+    </div>
+    <button class="open-popup">Написать</button>
+</main>
+
+<div class="popup">
+    <div class="popup__title">Стать партнёром проекта</div>
+
+    <form action="#" class="form" novalidate>
+        <div class="form-photo">
+            <div class="form-photo-inputs">
+                <div class="form-group">
+                    <input id="nameOrganization" type="text" class="form__input form__input_placeholder"
+                           placeholder="Название организации">
+                    <label for="" class="form__label-required">Название организации</label>
+                </div>
+                <div class="form-group">
+                    <input id="tel" type="tel" class="form__input form__input_placeholder" placeholder="Телефон">
+                    <label for="" class="form__label-required">Телефон</label>
+                </div>
+                <div class="form-group" id="emailValidatePopup">
+                    <input id="email" type="email" class="form__input
+                    form__input_placeholder" placeholder="E-mail">
+                    <label for="" class="form__label-required">E-mail</label>
+                </div>
+            </div>
+            <div class="form-photo-add">
+                <label for="" class="form-photo__title">Логотип (jpeg, png)</label>
+                <div class="form-photo-wrapper">
+                    <div class="form-photo__close"></div>
+                    <div class="form-photo__img">
+                        <label class="form-photo__label" for="formImage"></label>
+                        <img src="image/photo.png" id="formPrev" alt="" width="165" height="165">
+                        <input class="form-photo__input" id="formImage"
+                               accept=".jpg, .png" required type="file">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-inputs">
+            <div class="form-group">
+                <label id="selectLabel" for="" class="form__label-required">Направление</label>
+                <select id="selectGroup" class="form-select form__input_placeholder">
+                    <option value="0" selected></option>
+                    <option value="1">Биология</option>
+                    <option value="2">Физика</option>
+                    <option value="3">Геология</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form__input">
+                <label for="" class="form__label-icon"><img src="image/global.svg" alt=""></label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form__input">
+                <label for="" class="form__label-icon"><img src="image/vk.svg" alt=""></label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form__input">
+                <label for="" class="form__label-icon"><img src="image/ok.svg" alt=""></label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form__input">
+                <label for="" class="form__label-icon"><img src="image/fb.svg" alt=""></label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form__input">
+                <label for="" class="form__label-icon"><img src="image/instagramm.svg" alt=""></label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form__input">
+                <label for="" class="form__label-icon"><img src="image/youtube.svg" alt=""></label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form__input form__input_placeholder" placeholder="Руководитель">
+                <label for="" class="form__label-text">Руководитель</label>
+            </div>
+        </div>
+        <button type="submit" class="form__submit">Стать партнёром проекта</button>
+        <button type="reset" class="form__close">Отменить</button>
+
+    </form>
+</div>
+<div class="bg-blackout"></div>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+@import "resetV2.css"
+@import "fonts.css"
+
+
+@mixin adaptive-font-size($min, $max)
+  font-size: clamp(#{$min}px, #{$max / 1280 * 100}vw, #{$max}px )
+
+.body
+  position: relative
+  font-family: 'PT Sans', sans-serif
+  font-weight: 400
+  color: #0c1014
+  font-size: 16px
+
+.application
+  max-width: 1280px
+  margin-inline: auto
+  padding-bottom: 74px
+  position: relative
+  &__title
+    font-family: 'Montserrat', sans-serif
+    font-weight: 800
+    line-height: 125%
+    max-width: 122px
+  &__text
+    line-height: 162%
+    margin-bottom: 5px
+
+
+
+
+.bgImg
+  margin-bottom: 174px
+
+.section
+  padding-left: 70px
+
+
+.requirements, .possibility, .volunteer
+  display: flex
+  column-gap: 80px
+
+.requirements
+  margin-bottom: 80px
+  &-logo
+    display: flex
+    column-gap: 5px
+    align-items: center
+.possibility
+  margin-bottom: 100px
+.volunteer
+  margin-bottom: 10px
+
+.allowed
+  display: flex
+  gap: 16px
+  max-width: 580px
+  flex-wrap: wrap
+  &__item
+    font-weight: 400
+    font-size: 14px
+    line-height: 143%
+    text-align: center
+    color: white
+    background-color: #0848c0
+    padding: 5px 10px
+
+.open-popup
+  cursor: pointer
+  position: absolute
+  right: 250px
+  bottom: 230px
+  font-family: 'Lato', sans-serif
+  font-weight: 600
+  line-height: 112%
+  color: #e5266e
+  background-color: transparent
+  border: #e5266e 2px solid
+  border-radius: 4px
+  padding: 15px 42px
+  &:hover
+    border-color: #f580ac
+  &:active
+    transform: translate(-1px, 1px)
+    box-shadow: -1px 0px 15px rgba(229, 38, 110, 0.2)
+
+.bg-blackout
+  display: none
+  position: fixed
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  background: rgba(0, 0, 0, 0.5)
+
+
+.popup
+  padding: 55px 95px
+  background-color: white
+  border-radius: 12px
+  position: absolute
+  z-index: 10
+  top: 100px
+  left: 50%
+  transform: translateX(-50%)
+  display: none
+  flex-direction: column
+  align-items: center
+  &__title
+    align-self: flex-start
+    margin-bottom: 35px
+    font-weight: 800
+    font-size: 28px
+    line-height: 121%
+    color: #0c1014
+
+.form
+  display: flex
+  flex-direction: column
+  align-items: center
+  &-photo
+    margin-bottom: 50px
+    position: relative
+    display: flex
+    width: 100%
+    &-inputs
+      display: flex
+      flex-direction: column
+      row-gap: 32px
+      & > div > input
+        width: 362px
+
+    &-add
+      display: flex
+      flex-direction: column
+      position: absolute
+      right: 0
+      text-align: center
+    &__title
+      &:before
+        content: '*'
+        color: #d90000
+        font-size: 18px
+        margin-right: 2px
+        position: relative
+        top: 4px
+    &__close
+      cursor: pointer
+      z-index: 10
+      position: absolute
+      background-color: white
+      width: 37px
+      height: 37px
+      border-radius: 100%
+      right: 0
+      top: 10px
+      &:after
+        content: url("/image/close.svg")
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+    &__img
+      width: 165px
+      height: 165px
+      border-radius: 100%
+      overflow: hidden
+
+    &__label
+      cursor: pointer
+      position: absolute
+      width: 165px
+      height: 165px
+      border-radius: 100%
+      &:after
+        content: url("/image/changePhoto.svg")
+        position: absolute
+        z-index: 3
+        top: 50%
+        transform: translate(-50%, -150%)
+        left: 50%
+      &:before
+        content: 'Выберите файл'
+        position: absolute
+        z-index: 3
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -20%)
+        font-weight: 400
+        font-size: 18px
+        line-height: 150%
+        text-decoration: underline
+        text-align: center
+        color: #fff
+    &__input
+      display: none
+    &-wrapper
+      margin-top: 10px
+      position: relative
+  &-inputs
+    margin-bottom: 50px
+    display: flex
+    flex-direction: column
+    row-gap: 32px
+  &__input, &-select
+    border-radius: 2px
+    border: #d6dade 1px solid
+    padding: 16px 50px 16px 16px
+    width: 560px
+    height: 56px
+    &::placeholder
+      opacity: 0
+    &:focus + .form__label-required, &:focus + .form__label-text
+      margin-top: -15px
+      transition: all .2s ease
+    &:not(:placeholder-shown) + .form__label-required, &:not(:placeholder-shown) + .form__label-text
+      margin-top: -15px
+    &_placeholder
+      padding: 18px 50px 12px 16px
+  &-select
+    appearance: none
+    background: url('/image/arrow.svg') no-repeat right
+    background-position-x: calc(100% - 20px)
+
+
+  &__submit
+    margin-bottom: 15px
+    cursor: pointer
+    border-radius: 4px
+    background-color: #e5266e
+    border: none
+    font-weight: 600
+    font-size: 16px
+    line-height: 112%
+    text-align: center
+    color: #fff
+    padding: 16px 0
+    width: 100%
+  &__close
+    cursor: pointer
+    border: none
+    background-color: transparent
+    font-weight: 400
+    font-size: 16px
+    line-height: 150%
+    color: #0848c0
+
+.form-group
+  position: relative
+.form__label-required
+  z-index: 10
+  position: absolute
+  top: 50%
+  left: 17px
+  transform: translateY(-50%)
+  font-weight: 400
+  font-size: 12px
+  line-height: 133%
+  color: #6a6e72
+  pointer-events: none
+  &:before
+    content: '*'
+    color: #d90000
+    font-size: 18px
+    margin-right: 2px
+    position: relative
+    top: 4px
+.form__label-text
+  position: absolute
+  top: 50%
+  left: 17px
+  transform: translateY(-50%)
+  font-weight: 400
+  font-size: 12px
+  line-height: 133%
+  color: #6a6e72
+  pointer-events: none
+.form__label-icon
+  position: absolute
+  right: 15px
+  top: 50%
+  transform: translateY(-50%)
+
+
+.validate
+  outline: 3px red solid
+  animation: validateAnim 0.5s 2 cubic-bezier(0.68, -0.55, 0.27, 1.55) both
+  &_email
+    position: relative
+    &:before
+      position: absolute
+      bottom: -20px
+      left: 15px
+      content: 'Неверный email'
+      color: #d90000
+
+
+@keyframes validateAnim
+  10%, 90%
+    transform: translateX(-0.5px)
+  20%, 80%
+    transform: translateX(1px)
+  30%, 50%, 70%
+    transform: translateX(-2px)
+  40%, 60%
+    transform: translateX(2px)
+
+
+
+@media (max-width: 900px)
+  .popup
+    padding: 20px 40px
+  .form
+    &-inputs
+      width: 100%
+    &-photo
+      flex-direction: column
+      &-inputs > div > input
+        width: 100%
+      &-add
+        margin-top: 15px
+        position: static
+        align-items: center
+@media (max-width: 700px)
+  .form
+    &__input, &-select
+      width: 100vw - 20
+    &-photo
+      align-items: center
+      &-inputs > div > input
+        width: 100vw - 20
+
+@media (max-width: 500px)
+  .popup
+    transform: translateX(-40%)
+@media (max-width: 400px)
+  .popup
+    transform: translateX(-25%)
+  .form
+    &__input, &-select
+      width: 370px
+    &-photo
+      &-inputs > div > input
+        width: 370px
+@media (max-width: 600px)
+  .open-popup
+    bottom: 0
+    right: 50%
+    transform: translateX(50%)
+    &:active
+      transform: translateX(49%)
