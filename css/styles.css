@@ -28,6 +28,10 @@
 
 .bgImg {
   margin-bottom: 174px;
+  width: 100%;
+}
+.bgImg img {
+  max-width: 100%;
 }
 
 .section {
@@ -348,6 +352,17 @@
     transform: translateX(2px);
   }
 }
+@media (max-width: 600px) {
+  .bgImg {
+    margin-bottom: 80px;
+  }
+  .section {
+    padding-left: 20px;
+  }
+  .requirements, .possibility, .volunteer {
+    column-gap: 20px;
+  }
+}
 @media (max-width: 900px) {
   .popup {
     padding: 20px 40px;
@@ -378,22 +393,6 @@
     width: 80vw;
   }
 }
-@media (max-width: 500px) {
-  .popup {
-    transform: translateX(-40%);
-  }
-}
-@media (max-width: 400px) {
-  .popup {
-    transform: translateX(-25%);
-  }
-  .form__input, .form-select {
-    width: 370px;
-  }
-  .form-photo-inputs > div > input {
-    width: 370px;
-  }
-}
 @media (max-width: 600px) {
   .open-popup {
     bottom: 0;
@@ -402,6 +401,11 @@
   }
   .open-popup:active {
     transform: translateX(49%);
+  }
+}
+@media (max-width: 500px) {
+  .popup {
+    padding: 10px 20px;
   }
 }
 

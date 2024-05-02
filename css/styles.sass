@@ -2,8 +2,6 @@
 @import "fonts.css"
 
 
-@mixin adaptive-font-size($min, $max)
-  font-size: clamp(#{$min}px, #{$max / 1280 * 100}vw, #{$max}px )
 
 .body
   position: relative
@@ -31,6 +29,9 @@
 
 .bgImg
   margin-bottom: 174px
+  width: 100%
+  & img
+    max-width: 100%
 
 .section
   padding-left: 70px
@@ -306,6 +307,18 @@
     transform: translateX(2px)
 
 
+@media (max-width: 600px)
+  .bgImg
+    margin-bottom: 80px
+  .section
+    padding-left: 20px
+  .requirements, .possibility, .volunteer
+    column-gap: 20px
+
+
+
+
+
 
 @media (max-width: 900px)
   .popup
@@ -330,18 +343,6 @@
       &-inputs > div > input
         width: 100vw - 20
 
-@media (max-width: 500px)
-  .popup
-    transform: translateX(-40%)
-@media (max-width: 400px)
-  .popup
-    transform: translateX(-25%)
-  .form
-    &__input, &-select
-      width: 370px
-    &-photo
-      &-inputs > div > input
-        width: 370px
 @media (max-width: 600px)
   .open-popup
     bottom: 0
@@ -349,3 +350,9 @@
     transform: translateX(50%)
     &:active
       transform: translateX(49%)
+
+@media (max-width: 500px)
+  .popup
+    padding: 10px 20px
+
+
