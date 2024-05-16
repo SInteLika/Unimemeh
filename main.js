@@ -4,7 +4,7 @@ const nameOrganization = document.getElementById('nameOrganization')
 const emailValidatePopup = document.getElementById('emailValidatePopup')
 const selectGroup = document.getElementById('selectGroup')
 const selectLabel = document.getElementById('selectLabel')
-const tel = document.getElementById('tel')
+const telValidatePopup = document.getElementById('telValidatePopup')
 const email = document.getElementById('email')
 const clearImage = document.querySelector('.form-photo__close')
 const popup = document.querySelector('.popup')
@@ -25,13 +25,6 @@ clearImage.addEventListener('click', () => {
     formImage.value = ''
     formPrev.src = 'image/photo.png'
     label.style.visibility = 'visible'
-})
-
-tel.addEventListener('input', (e) => {
-    const elem = e.target.value
-    if (isNaN(elem)) {
-        e.target.value = elem.slice(0, -1)
-    }
 })
 
 selectGroup.addEventListener('change', (e) => {
@@ -69,13 +62,18 @@ submit.addEventListener('click', (e) => {
             }, 3000)
         }
 
-        if (tel.value.length < 1) {
+        if (tel.value.length < 1 || (tel.value[0] === '8' && tel.value.length < 15)
+            || (["7", "9"].indexOf(tel.value[1]) > -1) && tel.value.length < 16 ) {
             isValidate = false
             tel.scrollIntoView()
             tel.classList.add('validate')
+            telValidatePopup.classList.add('validate_tel')
             setTimeout(() => {
                 tel.classList.remove('validate')
             }, 1000)
+            setTimeout(() => {
+                telValidatePopup.classList.remove('validate_tel')
+            }, 3000)
         }
 
         if (nameOrganization.value.length < 1) {
@@ -90,7 +88,7 @@ submit.addEventListener('click', (e) => {
 
         if (formImage.value.length < 1) {
             isValidate = false
-            formImage.scrollIntoView()
+            nameOrganization.scrollIntoView()
             const photo = document.querySelector('.form-photo__img')
             photo.classList.add('validate')
             setTimeout(() => {
